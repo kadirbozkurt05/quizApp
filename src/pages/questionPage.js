@@ -24,9 +24,6 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
-  
-  
-
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
@@ -34,16 +31,13 @@ export const initQuestionPage = () => {
 
 const nextQuestion = () => {
   const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-  
+
   if (selectedAnswer) {
     // Check if the selected answer is correct
     const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
     const correctAnswer = currentQuestion.correct;
-    
-    
 
     if (selectedAnswer.value === correctAnswer) {
-
       // Increment the user's score
       quizData.userScore += 1;
       // Update the score display
@@ -51,23 +45,23 @@ const nextQuestion = () => {
 
       alert('Correct Answer!');
     } else {
-      alert(`Incorrect. The correct answer is: ${currentQuestion.answers[correctAnswer]}`);
+      alert(
+        `Incorrect. The correct answer is: ${currentQuestion.answers[correctAnswer]}`
+      );
     }
 
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
-  initQuestionPage();
-} else {
-  alert('Please select an answer.');
-}
+    initQuestionPage();
+  } else {
+    alert('Please select an answer.');
+  }
 };
 
 const updateScoreDisplay = () => {
   // Get the element where you want to display the user's score
-  const scoreElement = document.getElementById('score'); 
-  
+  const scoreElement = document.getElementById('score');
+
   // Update the score display with the user's score
   scoreElement.textContent = `Score: ${quizData.userScore}`;
 };
-
-
