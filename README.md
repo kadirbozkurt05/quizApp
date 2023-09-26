@@ -68,7 +68,7 @@ Tasks could look like this, using the [MoSCoW](https://en.wikipedia.org/wiki/MoS
 - [x] (should have) A user can see what the correct answer is after they selected their answer.
 - [x] (should have) A user can see their score update in real-time as they select answers
 - [x] (should have) A user can refresh the page and still have his/her given answers available
-- [ ] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
+- [x] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
 - [ ] (could have) Transition between pages or question look fancy like TypeForm for example
 
 You should create tasks that fit with your goal, these tasks serve just as an example.
