@@ -2,12 +2,12 @@
  * Create an Answer element
  * @returns {Element}
  */
-export const createAnswerElement = (key, answerText, isCorrect) => {
-  const element = document.createElement('li');
+export const createAnswerElement = (key, answerText) => {
+  const element = document.createElement('button');
+  element.classList.add('allAnswers');
 
   element.innerHTML = String.raw`
-  <input  type="radio" name="answer" id="${key}" value="${key}">
-    ${key}: ${answerText};
+  ${key}: ${answerText};
   `;
   return element;
 };

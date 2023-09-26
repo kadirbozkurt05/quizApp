@@ -10,58 +10,60 @@ import { quizData } from '../data.js';
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
   const questionElement = createQuestionElement(currentQuestion.text);
-
   userInterface.appendChild(questionElement);
-
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
-
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
+    answerElement.setAttribute('id', key);
+    answerElement.addEventListener('click', function () {
+      if (answerElement.id === currentQuestion.correct) {
+        const trueAnswer = document.getElementById(`${key}`);
+        const allAnswers = document.querySelectorAll('.allAnswers');
+        allAnswers.forEach((answer) => {
+          answer.disabled = true;
+        });
+        trueAnswer.style.backgroundColor = 'green';
+        quizData.userScore++;
+      } else {
+        const trueAnswer = document.getElementById(
+          `${currentQuestion.correct}`
+        );
+        const falseAnswer = document.getElementById(`${key}`);
+        trueAnswer.style.backgroundColor = 'green';
+        falseAnswer.style.backgroundColor = 'red';
+        const allAnswers = document.querySelectorAll('.allAnswers');
+        allAnswers.forEach((answer) => {
+          answer.disabled = true;
+        });
+      }
+    });
     answersListElement.appendChild(answerElement);
   }
-
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 };
-
 const nextQuestion = () => {
-  const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
-  if (selectedAnswer) {
-    // Check if the selected answer is correct
-    const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-    const correctAnswer = currentQuestion.correct;
+  sessionStorage.setItem('data', JSON.stringify(quizData));
 
-    if (selectedAnswer.value === correctAnswer) {
-      // Increment the user's score
-      quizData.userScore += 1;
-      // Update the score display
-      updateScoreDisplay();
-
-      alert('Correct Answer!');
-    } else {
-      alert(
-        `Incorrect. The correct answer is: ${currentQuestion.answers[correctAnswer]}`
-      );
-    }
-
-    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
+  if (quizData.questions.length > quizData.currentQuestionIndex) {
     initQuestionPage();
   } else {
-    alert('Please select an answer.');
+    const userInterface = document.getElementById(USER_INTERFACE_ID);
+    const reloadBtn = document.createElement('button');
+    const lastScore = document.createElement('div');
+    lastScore.innerHTML = `${quizData.userScore} / ${quizData.currentQuestionIndex}`;
+    reloadBtn.textContent = 'Try Again';
+    reloadBtn.addEventListener('click', function () {
+      sessionStorage.removeItem('data');
+      location.reload();
+    });
+    userInterface.innerHTML = '';
+    userInterface.appendChild(lastScore);
+    userInterface.appendChild(reloadBtn);
   }
-};
-
-const updateScoreDisplay = () => {
-  // Get the element where you want to display the user's score
-  const scoreElement = document.getElementById('score');
-
-  // Update the score display with the user's score
-  scoreElement.textContent = `Score: ${quizData.userScore}`;
 };
