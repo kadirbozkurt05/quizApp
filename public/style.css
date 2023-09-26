@@ -14,4 +14,17 @@
 
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.allAnswers{
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: black;
+}
+.allAnswers:disabled {
+  opacity: 1;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: black;
 }
