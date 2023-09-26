@@ -84,9 +84,7 @@ const nextQuestion = () => {
 };
 
 const showAnswer = () => {
-  console.log(currentQuestion.answers[currentQuestion.correct]);
   const allAnswers = Array.from(document.getElementsByClassName('allAnswers'));
-
   allAnswers.forEach((answer) => {
     if (answer.id === currentQuestion.correct) {
       document.getElementById(answer.id).style.backgroundColor = 'green';
