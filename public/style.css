@@ -17,7 +17,7 @@ ul {
   display: flex;
   flex-direction: column;
 }
-.allAnswers{
+.allAnswers {
   cursor: pointer;
   background-color: #f0f0f0;
   color: black;

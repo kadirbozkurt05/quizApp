@@ -7,7 +7,6 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
-
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -17,27 +16,29 @@ export const initQuestionPage = () => {
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
-    answerElement.setAttribute('id',key)
-    answerElement.addEventListener('click',function(){
-      if(answerElement.id === currentQuestion.correct){
-        const trueAnswer = document.getElementById(`${key}`)
-        const allAnswers = document.querySelectorAll('.allAnswers')
-        allAnswers.forEach(answer=>{
+    answerElement.setAttribute('id', key);
+    answerElement.addEventListener('click', function () {
+      if (answerElement.id === currentQuestion.correct) {
+        const trueAnswer = document.getElementById(`${key}`);
+        const allAnswers = document.querySelectorAll('.allAnswers');
+        allAnswers.forEach((answer) => {
           answer.disabled = true;
-        })
-        trueAnswer.style.backgroundColor='green'
+        });
+        trueAnswer.style.backgroundColor = 'green';
         quizData.userScore++;
-      }else{
-        const trueAnswer = document.getElementById(`${currentQuestion.correct}`)
-        const falseAnswer = document.getElementById(`${key}`)
-        trueAnswer.style.backgroundColor = 'green'
-        falseAnswer.style.backgroundColor='red'
-        const allAnswers = document.querySelectorAll('.allAnswers')
-        allAnswers.forEach(answer=>{
+      } else {
+        const trueAnswer = document.getElementById(
+          `${currentQuestion.correct}`
+        );
+        const falseAnswer = document.getElementById(`${key}`);
+        trueAnswer.style.backgroundColor = 'green';
+        falseAnswer.style.backgroundColor = 'red';
+        const allAnswers = document.querySelectorAll('.allAnswers');
+        allAnswers.forEach((answer) => {
           answer.disabled = true;
-        })
+        });
       }
-    })
+    });
     answersListElement.appendChild(answerElement);
   }
   document
@@ -47,25 +48,22 @@ export const initQuestionPage = () => {
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
-  
-  sessionStorage.setItem('data',JSON.stringify(quizData))
+  sessionStorage.setItem('data', JSON.stringify(quizData));
 
-  if(quizData.questions.length > quizData.currentQuestionIndex){
+  if (quizData.questions.length > quizData.currentQuestionIndex) {
     initQuestionPage();
-  }else{
+  } else {
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     const reloadBtn = document.createElement('button');
-    const lastScore = document.createElement('div')
+    const lastScore = document.createElement('div');
     lastScore.innerHTML = `${quizData.userScore} / ${quizData.currentQuestionIndex}`;
-    reloadBtn.textContent = 'Try Again'
-    reloadBtn.addEventListener('click', function(){
+    reloadBtn.textContent = 'Try Again';
+    reloadBtn.addEventListener('click', function () {
       sessionStorage.removeItem('data');
       location.reload();
-
-    })
+    });
     userInterface.innerHTML = '';
     userInterface.appendChild(lastScore);
     userInterface.appendChild(reloadBtn);
-
-}
-}
+  }
+};
