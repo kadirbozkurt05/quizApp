@@ -26,7 +26,7 @@ export const initQuestionPage = () => {
           answer.disabled = true;
         })
         trueAnswer.style.backgroundColor='green'
-        quizData.yourScore++;
+        quizData.userScore++;
       }else{
         const trueAnswer = document.getElementById(`${currentQuestion.correct}`)
         const falseAnswer = document.getElementById(`${key}`)
@@ -46,23 +46,26 @@ export const initQuestionPage = () => {
 };
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-  sessionStorage.setItem('data',JSON.stringify(quizData))
+
   
+  sessionStorage.setItem('data',JSON.stringify(quizData))
+
   if(quizData.questions.length > quizData.currentQuestionIndex){
     initQuestionPage();
   }else{
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     const reloadBtn = document.createElement('button');
     const lastScore = document.createElement('div')
-    lastScore.innerHTML = `${quizData.yourScore} / ${quizData.currentQuestionIndex}`;
+    lastScore.innerHTML = `${quizData.userScore} / ${quizData.currentQuestionIndex}`;
     reloadBtn.textContent = 'Try Again'
     reloadBtn.addEventListener('click', function(){
       sessionStorage.removeItem('data');
       location.reload();
-      
+
     })
     userInterface.innerHTML = '';
     userInterface.appendChild(lastScore);
     userInterface.appendChild(reloadBtn);
-  }
-};
+
+}
+}
