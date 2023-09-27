@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-image: linear-gradient(yellow, red);
+  background-image: linear-gradient(#ffff00, #ff0000);
 }
 
 .centered {
@@ -59,7 +59,7 @@ ul {
   top: 5px;
   width: 0%;
   height: 5px;
-  background-color: red;
+  background-color: #ff0000;
 }
 
 /*Style the welcome page*/
