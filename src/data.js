@@ -9,7 +9,6 @@
     not by your listeners
 */
 
-
 export const quizData = {
   currentQuestionIndex: 0,
   userScore: 0,
@@ -49,7 +48,8 @@ export const quizData = {
       links: [
         {
           text: 'Mozilla Developer Network (MDN)',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model',
         },
         {
           text: 'W3Schools',
@@ -70,7 +70,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN Web Docs',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions',
         },
       ],
     },
@@ -87,16 +88,21 @@ export const quizData = {
       links: [
         {
           text: 'MDN Web Docs',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this',
         },
       ],
     },
     {
-      text: 'What is the difference between "let," "const," and "var" in JavaScript for variable declaration?',
+      text:
+        'What is the difference between "let," "const," and "var" in JavaScript for variable declaration?',
       answers: {
-        a: '"let" is used for variables that never change, "const" is used for variables that change frequently, and "var" is used for function declarations.',
-        b: '"let" has block scope, "const" is used for function declarations, and "var" has global scope.',
-        c: '"let" and "const" have block scope, while "var" has function scope.',
+        a:
+          '"let" is used for variables that never change, "const" is used for variables that change frequently, and "var" is used for function declarations.',
+        b:
+          '"let" has block scope, "const" is used for function declarations, and "var" has global scope.',
+        c:
+          '"let" and "const" have block scope, while "var" has function scope.',
         d: '"let" and "const" are interchangeable, and "var" is deprecated.',
       },
       correct: 'c',
@@ -104,15 +110,18 @@ export const quizData = {
       links: [
         {
           text: 'MDN Web Docs',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let',
         },
         {
           text: 'MDN Web Docs',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const',
         },
         {
           text: 'MDN Web Docs',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var',
         },
       ],
     },
@@ -120,7 +129,8 @@ export const quizData = {
       text: 'What is a closure in JavaScript?',
       answers: {
         a: 'A way to close a web page.',
-        b: 'A function that has access to variables from its outer function even after the outer function has finished executing.',
+        b:
+          'A function that has access to variables from its outer function even after the outer function has finished executing.',
         c: 'A special type of loop.',
         d: 'A way to create an infinite loop.',
       },
@@ -129,7 +139,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN Web Docs',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures',
         },
         {
           text: 'JavaScript.info',
@@ -138,7 +149,8 @@ export const quizData = {
       ],
     },
     {
-      text: 'What is the purpose of the "async" and "await" keywords in JavaScript?',
+      text:
+        'What is the purpose of the "async" and "await" keywords in JavaScript?',
       answers: {
         a: 'To make functions asynchronous.',
         b: 'To declare variables.',
@@ -150,7 +162,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN Web Docs',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function',
         },
         {
           text: 'JavaScript.info',
@@ -180,7 +193,8 @@ export const quizData = {
       ],
     },
     {
-      text: 'What is an IIFE (Immediately Invoked Function Expression) in JavaScript?',
+      text:
+        'What is an IIFE (Immediately Invoked Function Expression) in JavaScript?',
       answers: {
         a: 'A function that is invoked after a delay.',
         b: 'A function that is automatically invoked as soon as it is defined.',
@@ -192,7 +206,8 @@ export const quizData = {
       links: [
         {
           text: 'JavaScript.info',
-          href: 'https://javascript.info/closure#immediately-invoked-function-expression-iife',
+          href:
+            'https://javascript.info/closure#immediately-invoked-function-expression-iife',
         },
       ],
     },
@@ -200,7 +215,8 @@ export const quizData = {
       text: 'What is the purpose of the JavaScript "map" method?',
       answers: {
         a: 'To create a map visualization on a web page.',
-        b: 'To iterate over an array and transform its elements, returning a new array.',
+        b:
+          'To iterate over an array and transform its elements, returning a new array.',
         c: 'To add markers to a Google Map.',
         d: 'To create a mapping between two arrays.',
       },
@@ -209,7 +225,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN Web Docs',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map',
         },
         {
           text: 'JavaScript.info',

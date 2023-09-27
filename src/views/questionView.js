@@ -30,6 +30,6 @@ export const createQuestionElement = (question) => {
     <button id="${SHOW_ANSWER_BUTTON_ID}">
     Show Answer
   </button>
-  `
+  `;
   return element;
-}
+};

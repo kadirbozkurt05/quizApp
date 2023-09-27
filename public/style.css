@@ -1,5 +1,5 @@
-body{
-  height:100vh;
+body {
+  height: 100vh;
   background-image: linear-gradient(yellow, red);
 }
 
@@ -31,7 +31,7 @@ ul {
 .allAnswers:disabled {
   opacity: 1;
   cursor: pointer;
-  color: black; 
+  color: black;
   background-color: #f0f0f0;
 }
 
@@ -54,7 +54,7 @@ ul {
   margin-top: 10px;
 }
 
-.progress-bar{
+.progress-bar {
   position: fixed;
   top: 5px;
   width: 0%;
@@ -107,6 +107,5 @@ button:disabled {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
   letter-spacing: 1px; /* Adjust letter spacing for readability */
 }
-
 
 /* Optional: Add more styles for different button states (e.g., disabled) */
