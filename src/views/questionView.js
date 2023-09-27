@@ -19,7 +19,6 @@ export const createQuestionElement = (question) => {
     quizData.questions.length
   }<br>
      Score : ${quizData.userScore}</h1>
-    <h1>${question}</h1>
     <h1  class="question">${question}</h1>
 
     <ul class="answers" id="${ANSWERS_LIST_ID}">
@@ -31,6 +30,6 @@ export const createQuestionElement = (question) => {
     <button id="${SHOW_ANSWER_BUTTON_ID}">
     Show Answer
   </button>
-  `;
+  `
   return element;
-};
+}

@@ -7,7 +7,7 @@ export const createAnswerElement = (key, answerText) => {
   element.classList.add('allAnswers');
 
   element.innerHTML = String.raw`
-  ${key}: ${answerText};
+  ${key}: ${answerText}
   `;
   return element;
 };

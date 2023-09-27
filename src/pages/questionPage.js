@@ -106,10 +106,6 @@ const progressBar = ()=>{
   const widthOfBar = `${(quizData.currentQuestionIndex/quizData.questions.length)*100}%`
   if (quizData.questions.length > quizData.currentQuestionIndex){
     bar.style.width = widthOfBar;
-    console.log('KÜÇÜKKEN', bar);
-  }else{
-    bar.style.width = '100%';
-    console.log('BÜYÜKKEN', bar);
   }
   
 }
