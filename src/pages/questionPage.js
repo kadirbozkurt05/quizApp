@@ -10,6 +10,8 @@ import { quizData } from '../data.js';
 
 let nextQuestionButton = null;
 let currentQuestion = null;
+const bar = document.querySelector('.progress-bar');
+const duck = document.getElementById('walking-duck-img');
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -66,7 +68,7 @@ const nextQuestion = () => {
   if (quizData.questions.length > quizData.currentQuestionIndex) {
     initQuestionPage();
   } else {
-    const bar = document.querySelector('.progress-bar');
+    duck.style.left = '100%';
     bar.style.width = '100%';
 
     const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -100,11 +102,16 @@ const showAnswer = () => {
 };
 
 const progressBar = () => {
-  const bar = document.querySelector('.progress-bar');
+  if (quizData.currentQuestionIndex != 0) {
+    duck.style.display = 'flex';
+  }
+
   const widthOfBar = `${
     (quizData.currentQuestionIndex / quizData.questions.length) * 100
   }%`;
+
   if (quizData.questions.length > quizData.currentQuestionIndex) {
     bar.style.width = widthOfBar;
+    duck.style.left = widthOfBar;
   }
 };
