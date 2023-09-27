@@ -6,7 +6,7 @@ const loadApp = () => {
   const sessionQuizData = JSON.parse(sessionStorage.getItem('data'));
   if (sessionQuizData) {
     quizData.currentQuestionIndex = sessionQuizData.currentQuestionIndex;
-    quizData.yourScore = sessionQuizData.yourScore;
+    quizData.userScore = sessionQuizData.userScore;
     initQuestionPage();
   } else {
     quizData.currentQuestionIndex = 0;
