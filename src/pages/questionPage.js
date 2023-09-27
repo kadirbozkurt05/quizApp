@@ -22,6 +22,9 @@ export const initQuestionPage = () => {
   nextQuestionButton.disabled = true;
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+
+  progressBar();
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answerElement.setAttribute('id', key);
@@ -64,6 +67,10 @@ const nextQuestion = () => {
   if (quizData.questions.length > quizData.currentQuestionIndex) {
     initQuestionPage();
   } else {
+
+    const bar = document.querySelector('.progress-bar');
+    bar.style.width = '100%';
+
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     const reloadBtn = document.createElement('button');
     const lastScore = document.createElement('div');
@@ -93,3 +100,16 @@ const showAnswer = () => {
   });
   nextQuestionButton.disabled = false;
 };
+
+const progressBar = ()=>{
+  const bar = document.querySelector('.progress-bar');
+  const widthOfBar = `${(quizData.currentQuestionIndex/quizData.questions.length)*100}%`
+  if (quizData.questions.length > quizData.currentQuestionIndex){
+    bar.style.width = widthOfBar;
+    console.log('KÜÇÜKKEN', bar);
+  }else{
+    bar.style.width = '100%';
+    console.log('BÜYÜKKEN', bar);
+  }
+  
+}
