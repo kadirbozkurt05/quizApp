@@ -6,11 +6,16 @@ body {
 }
 
 .centered {
+  padding: 30px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 650px;
+  height: 450px;
+  box-shadow: 2px 1px 19px 0px rgba(0, 0, 0, 1);
+  background-color: rgb(225, 225, 225);
 }
 
 .scrollable {
@@ -23,6 +28,7 @@ ul {
   list-style: none;
   display: flex;
   flex-direction: column;
+  padding: 0px;
 }
 .allAnswers {
   cursor: pointer;
@@ -61,14 +67,6 @@ ul {
   color: #f0f0f0;
 }
 
-.progress-bar {
-  position: fixed;
-  top: 5px;
-  width: 0%;
-  height: 5px;
-  background-color: #ff0000;
-}
-
 /*Style the welcome page*/
 .quiz-image {
   max-width: 100%;
@@ -80,39 +78,41 @@ button {
   display: inline-block;
   padding: 12px 24px;
   font-size: 16px;
-  background-color: #3498db; /* Change the background color */
-  color: #ffffff; /* Change the text color */
+  background-color: #3498db;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover effect */
 button:hover {
-  background-color: #2980b9; /* Change the background color on hover */
-  transform: scale(1.05); /* Add a slight scale effect on hover */
+  background-color: #2980b9;
+  transform: scale(1.05);
 }
 
-/* Active (clicked) state */
 button:active {
-  transform: scale(0.95); /* Add a slight scale effect when clicked */
+  transform: scale(0.95);
 }
 
 button:disabled {
-  background-color: #ccc; /* Change the background color to a faded color */
-  color: #666; /* Change the text color to a faded color */
-  cursor: not-allowed; /* Change the cursor to indicate not allowed */
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+#show-answer-button {
+  margin-left: 10px;
 }
 
 .welcome-text {
-  font-size: 24px; /* Adjust the font size as needed */
-  color: #333; /* Change the text color */
+  font-size: 24px;
+  color: #333;
   text-align: center;
-  margin-top: 20px; /* Adjust the top margin to control spacing */
-  font-weight: bold; /* Optionally make the text bold */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
-  letter-spacing: 1px; /* Adjust letter spacing for readability */
+  margin-top: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
 }
 
 /* Optional: Add more styles for different button states (e.g., disabled) */
@@ -120,8 +120,6 @@ button:disabled {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  margin-bottom: 200px;
-  margin-left: 100%;
   width: 100px;
   font-size: 16px;
   font-weight: bold;
@@ -147,5 +145,45 @@ button:disabled {
   #upScore {
     justify-content: center; /* Center horizontally */
     align-items: flex-start; /* Align to the top */
+  }
+}
+/*
+Progress Bar Style
+*/
+
+#walking-duck-img {
+  height: 50px;
+  position: fixed;
+  display: none;
+  margin-left: 5px;
+  transition: 0.9s;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+}
+
+.progress-bar {
+  position: fixed;
+  width: 0%;
+  height: 10px;
+  background-color: #ff0000;
+  transition: 0.9s;
+}
+
+.questionElement {
+  animation: load 750ms ease-in;
+  margin: 0 20px 0 20px;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
