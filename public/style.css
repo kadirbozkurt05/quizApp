@@ -116,7 +116,7 @@ button:disabled {
 
 /* Optional: Add more styles for different button states (e.g., disabled) */
 #upScore {
-  display: flex;  
+  display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   width: 100px;
@@ -167,7 +167,7 @@ Progress Bar Style
   position: fixed;
   width: 0%;
   height: 10px;
-  background-image: linear-gradient(to right, #989898,#4c4b4b);;
+  background-image: linear-gradient(to right, #989898, #4c4b4b);
   transition: 2.3s;
 }
 
