@@ -1,14 +1,19 @@
 body {
   height: 100vh;
-  background-image: linear-gradient(#ffff00, #ff0000);
+  background-color: rgb(190, 190, 190);
 }
 
 .centered {
+  padding: 30px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 650px;
+  height: 450px;
+  box-shadow: 2px 1px 19px 0px rgba(0, 0, 0, 1);
+  background-color: rgb(225, 225, 225);
 }
 
 .scrollable {
@@ -21,6 +26,7 @@ ul {
   list-style: none;
   display: flex;
   flex-direction: column;
+  padding: 0px;
 }
 .allAnswers {
   cursor: pointer;
@@ -88,6 +94,10 @@ button:disabled {
   cursor: not-allowed;
 }
 
+#show-answer-button {
+  margin-left: 10px;
+}
+
 .welcome-text {
   font-size: 24px;
   color: #333;
@@ -123,4 +133,18 @@ Progress Bar Style
   height: 10px;
   background-color: #ff0000;
   transition: 0.9s;
+}
+
+.questionElement {
+  animation: load 750ms ease-in;
+  margin: 0 20px 0 20px;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
