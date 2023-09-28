@@ -15,7 +15,9 @@ export const createQuestionElement = (question) => {
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-  <div id = "upScore"><span class = "scoreW">Score</span> <span class = "scoreNum"> ${quizData.userScore}</span></div>
+  <div id = "upScore"><span class = "scoreW">Score</span> <span class = "scoreNum"> ${
+    quizData.userScore
+  }</span></div>
     <h1 id='score'>Question : ${quizData.currentQuestionIndex + 1}/${
     quizData.questions.length
   }
