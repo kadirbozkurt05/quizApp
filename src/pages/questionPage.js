@@ -104,6 +104,7 @@ const showAnswer = () => {
 const progressBar = () => {
   if (quizData.currentQuestionIndex != 0) {
     duck.style.display = 'flex';
+    duck.style.opacity = '1';
   }
 
   const widthOfBar = `${
@@ -113,5 +114,6 @@ const progressBar = () => {
   if (quizData.questions.length > quizData.currentQuestionIndex) {
     bar.style.width = widthOfBar;
     duck.style.left = widthOfBar;
+    duck.style.removeProperty('right');
   }
 };
