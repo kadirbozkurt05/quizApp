@@ -151,9 +151,9 @@ Progress Bar Style
 #walking-duck-img {
   height: 50px;
   position: fixed;
-  display: none;
+  opacity: 0;
+  transition: 2.3s;
   margin-left: 5px;
-  transition: 0.9s;
 }
 
 .container {
@@ -167,8 +167,8 @@ Progress Bar Style
   position: fixed;
   width: 0%;
   height: 10px;
-  background-color: #ff0000;
-  transition: 0.9s;
+  background-image: linear-gradient(to right, #989898, #4c4b4b);
+  transition: 2.3s;
 }
 
 .questionElement {
