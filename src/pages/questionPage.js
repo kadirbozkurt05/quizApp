@@ -46,15 +46,15 @@ export const initQuestionPage = () => {
         allAnswers.forEach((answer) => {
           answer.disabled = true;
         });
-        trueAnswer.style.backgroundColor = 'green';
+        trueAnswer.style.background = 'green';
         quizData.userScore++;
       } else {
         const trueAnswer = document.getElementById(
           `${currentQuestion.correct}`
         );
         const falseAnswer = document.getElementById(`${key}`);
-        trueAnswer.style.backgroundColor = 'green';
-        falseAnswer.style.backgroundColor = 'red';
+        trueAnswer.style.background = 'green';
+        falseAnswer.style.background = 'red';
         const allAnswers = document.querySelectorAll('.allAnswers');
         allAnswers.forEach((answer) => {
           answer.disabled = true;
@@ -103,7 +103,7 @@ const showAnswer = () => {
   const allAnswers = Array.from(document.getElementsByClassName('allAnswers'));
   allAnswers.forEach((answer) => {
     if (answer.id === currentQuestion.correct) {
-      document.getElementById(answer.id).style.backgroundColor = 'green';
+      document.getElementById(answer.id).style.background = 'green';
     }
     answer.disabled = true;
   });
@@ -141,5 +141,5 @@ const countdown = function (seconds) {
       countdownElement.innerHTML = `Time : ${seconds}`;
       seconds--;
     }
-  }, 10);
+  }, 1000);
 };

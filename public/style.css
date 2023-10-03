@@ -1,8 +1,10 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100vh;
-
-  background-color: rgb(190, 190, 190);
+  background-color: #222;
+  color: #fff;
+  margin: 0;
+  overflow: hidden;
 }
 
 .centered {
@@ -12,64 +14,62 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 650px;
-  height: 450px;
-  box-shadow: 2px 1px 19px 0px rgba(0, 0, 0, 1);
-  background-color: rgb(225, 225, 225);
+  width: 80vw;
+  max-width: 650px;
+  height: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background-color: #333;
+  border-radius: 10px;
 }
 
 .scrollable {
-  height: auto;
-  max-height: 80vh;
+  max-height: 60vh;
   overflow: auto;
 }
 
 ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  padding: 0px;
+  padding: 0;
 }
+
 .allAnswers {
+  display: block;
   cursor: pointer;
-  background-color: #f0f0f0;
-  color: black;
+  background-color: #555;
+  color: #fff;
   margin-top: 5px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .allAnswers:disabled {
-  opacity: 1;
-  cursor: pointer;
-  color: black;
-  background-color: #f0f0f0;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .allAnswers:hover {
-  cursor: pointer;
-  background-color: #6ed3ff;
+  background-color: #00aaff;
+  transform: scale(1.05);
 }
 
 /* Style the question */
 .question {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 /* Style the score display */
 #score {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 10px;
-  background-color: #a1917e;
+  background-color: #444;
   padding: 10px;
   border-radius: 5px;
-  color: #f0f0f0;
-}
-
-/*Style the welcome page*/
-.quiz-image {
-  max-width: 100%;
-  height: auto;
 }
 
 /* Style for the button */
@@ -77,17 +77,18 @@ button {
   display: inline-block;
   padding: 12px 24px;
   font-size: 16px;
-  background-color: #3498db;
-  color: #ffffff;
+  background: linear-gradient(90deg, #ff6b6b, #ff3491); /* Gradient with different colors */
+  color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background-color: #2980b9;
   transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
@@ -95,18 +96,20 @@ button:active {
 }
 
 button:disabled {
-  background-color: #ccc;
-  color: #666;
+  background-color: #888;
+  color: #ccc;
   cursor: not-allowed;
+  box-shadow: none;
 }
+
+
 
 #show-answer-button {
   margin-left: 10px;
 }
 
 .welcome-text {
-  font-size: 24px;
-  color: #333;
+  font-size: 28px;
   text-align: center;
   margin-top: 20px;
   font-weight: bold;
@@ -119,26 +122,22 @@ button:disabled {
   top: 5px;
   left: 5px;
   position: absolute;
-  display: inline-flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #ff8c00;
-  gap: 10px;
+  font-size: 30px;
+  background: linear-gradient(90deg, #ff6b6b, #ff3491);
+  padding: 5px;
+  color: #fff;
+  border-radius: 5px;
 }
+
 .scoreNum {
   font-size: 30px;
-  background-color: #ff8c00;
   padding: 5px;
-  color: #fbf8f8ef;
   border-radius: 5px;
   order: 2;
 }
+
 .scoreW {
   margin-top: 15px;
-  font-size: 20px;
   order: 1;
 }
 
@@ -147,9 +146,9 @@ button:disabled {
   top: 5px;
   right: 5px;
   font-size: 30px;
-  background-color: #ff8c00;
+  background: linear-gradient(90deg, #ff6b6b, #ff3491);
   padding: 5px;
-  color: #fbf8f8ef;
+  color: #fff;
   border-radius: 5px;
 }
 
@@ -160,6 +159,7 @@ button:disabled {
     align-items: flex-start; /* Align to the top */
   }
 }
+
 /*
 Progress Bar Style
 */
@@ -183,7 +183,7 @@ Progress Bar Style
   position: fixed;
   width: 0%;
   height: 10px;
-  background-image: linear-gradient(to right, #989898, #4c4b4b);
+  background: linear-gradient(90deg, #ff6b6b, #ff3491);
   transition: 2.3s;
 }
 
