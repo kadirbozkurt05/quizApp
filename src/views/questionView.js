@@ -18,6 +18,7 @@ export const createQuestionElement = (question) => {
   <div id = "upScore"><span class = "scoreW">Score</span> <span class = "scoreNum"> ${
     quizData.userScore
   }</span></div>
+  <div id="countdown"></div>
     <h1 id='score'>Question : ${quizData.currentQuestionIndex + 1}/${
     quizData.questions.length
   }

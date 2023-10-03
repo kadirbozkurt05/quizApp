@@ -9,7 +9,9 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
 let nextQuestionButton = null;
+let countdownElement = null;
 let currentQuestion = null;
+let time = 5;
 const bar = document.querySelector('.progress-bar');
 const duck = document.getElementById('walking-duck-img');
 
@@ -21,16 +23,23 @@ export const initQuestionPage = () => {
   const questionElement = createQuestionElement(currentQuestion.text);
   userInterface.appendChild(questionElement);
   nextQuestionButton = document.getElementById(NEXT_QUESTION_BUTTON_ID);
+  countdownElement = document.getElementById('countdown');
+  countdownElement.innerText = 'Time : 5';
   nextQuestionButton.disabled = true;
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+  countdown(time);
   progressBar();
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answerElement.setAttribute('id', key);
+
     answerElement.addEventListener('click', function () {
+      clearInterval(countdownInterval);
+
       nextQuestionButton.disabled = false;
+
       if (answerElement.id === currentQuestion.correct) {
         const trueAnswer = document.getElementById(`${key}`);
         const allAnswers = document.querySelectorAll('.allAnswers');
@@ -114,6 +123,23 @@ const progressBar = () => {
   if (quizData.questions.length > quizData.currentQuestionIndex) {
     bar.style.width = widthOfBar;
     duck.style.left = widthOfBar;
-    duck.style.removeProperty('right');
   }
+};
+
+/**
+ * COUNTDOWN TIMER
+ */
+
+let countdownInterval;
+const countdown = function (seconds) {
+  countdownInterval = setInterval(() => {
+    if (seconds === 0) {
+      clearInterval(countdownInterval);
+      countdownElement.innerText = 'Time Out';
+      showAnswer();
+    } else {
+      countdownElement.innerHTML = `Time : ${seconds}`;
+      seconds--;
+    }
+  }, 10);
 };
