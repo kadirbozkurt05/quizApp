@@ -77,7 +77,7 @@ button {
   display: inline-block;
   padding: 12px 24px;
   font-size: 16px;
-  background: linear-gradient(90deg, #ff6b6b, #ff3491); /* Gradient with different colors */
+  background: linear-gradient(90deg, #FFD100, #C8102E);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -123,7 +123,7 @@ button:disabled {
   left: 5px;
   position: absolute;
   font-size: 30px;
-  background: linear-gradient(90deg, #ff6b6b, #ff3491);
+  background: linear-gradient(90deg, #FFD100, #C8102E);
   padding: 5px;
   color: #fff;
   border-radius: 5px;
@@ -146,7 +146,7 @@ button:disabled {
   top: 5px;
   right: 5px;
   font-size: 30px;
-  background: linear-gradient(90deg, #ff6b6b, #ff3491);
+  background: linear-gradient(90deg, #FFD100, #C8102E);
   padding: 5px;
   color: #fff;
   border-radius: 5px;
@@ -183,7 +183,7 @@ Progress Bar Style
   position: fixed;
   width: 0%;
   height: 10px;
-  background: linear-gradient(90deg, #ff6b6b, #ff3491);
+  background: linear-gradient(90deg, #FFD100, #C8102E);
   transition: 2.3s;
 }
 

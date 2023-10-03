@@ -24,7 +24,7 @@ export const initQuestionPage = () => {
   userInterface.appendChild(questionElement);
   nextQuestionButton = document.getElementById(NEXT_QUESTION_BUTTON_ID);
   countdownElement = document.getElementById('countdown');
-  countdownElement.innerText = 'Time : 5';
+  countdownElement.innerText = `Time : ${time}`;
   nextQuestionButton.disabled = true;
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
@@ -100,6 +100,7 @@ const nextQuestion = () => {
 };
 
 const showAnswer = () => {
+  clearInterval(countdownInterval);
   const allAnswers = Array.from(document.getElementsByClassName('allAnswers'));
   allAnswers.forEach((answer) => {
     if (answer.id === currentQuestion.correct) {
